@@ -1,0 +1,22 @@
+<style type="text/css">body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0; /* Added to remove default body margin */
+    }
+    .video-container {
+        width: 560px; /* Width of the video */
+        height: 250px; /* Adjusted height to hide bottom part of the video */
+        overflow: hidden; /* Hides the parts of the iframe that are outside this container */
+        position: relative; /* For absolute positioning of the iframe */
+    }
+    .video-container iframe {
+        position: absolute;
+        top: -50px; /* Adjust this value as needed to hide the bottom part */
+        left: 0;
+        width: 100%;
+        height: 365px; /* Adjusted height of the iframe */
+    }
+</style>
+<div class="video-container"><iframe src="https://www.youtube.com/embed/ZKeqwBOAfOU?start=1&amp;autoplay=1&amp;mute=1&amp;showinfo=0&amp;rel=0&amp;controls=0&amp;disablekb=1&amp;modestbranding=1"></iframe></div>
