@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+let playCount = 0;
+
+function onYouTubeIframeAPIReady() {
+  let player = new YT.Player('player', {
+    events: {
+      'onStateChange': onPlayerStateChange
+    }
+  }); 
+}
+
+function onPlayerStateChange(event) {   
+  if (event.data == YT.PlayerState.PLAYING) {
+    playCount++;
+    console.log('Play Count: ' + playCount)  
+  }
+} 
+</script>
+
+<style>
+body {
+  margin: 0;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 100vh; 
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden; 
+  width: 560px;
+  height: 315px; 
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="player" class="video-container">
+  <iframe src="https://www.youtube.com/embed/ZKeqwBOAfOU?autoplay=1&mute=1&rel=0" allowfullscreen></iframe>
+</div>
+
+</body>
+
+</html>
